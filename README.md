@@ -23,9 +23,12 @@ Included codes which require separate activation:
 the procedure for these codes can be found in the respective README-files in the folders 5/6.
 
 General user manual:
-1.) $git clone$ this repository to your local machine
-2.) Activate the codes mentioned above
-3.) Search and add the input files you wish to investigate
-4.) Adjust the variables in the top-most parameter.py file to your setup of interest
-5.) Open a terminal and run
-$python3 run.sh$ : this file executes the scripts (run.sh) in each folder which run the respective .py-files which are also creating the plots which can be found in the plots-folder. 
+
+1) $git clone$ this repository to your local machine
+2) Activate the codes mentioned above
+3) Search and add the input files you wish to investigate
+4) Adjust the variables in the top-most parameter.py file to your setup of interest
+5) Open a terminal and run
+6) 
+$python3 run.sh$
+this file executes the scripts (run.sh) in each folder which run the respective .py-files which are also creating the plots which can be found in the plots-folder. 
