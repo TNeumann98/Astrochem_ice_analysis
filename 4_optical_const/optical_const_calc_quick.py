@@ -58,10 +58,14 @@ def nk_calc(xAb: np.ndarray, yAb: np.ndarray, d: float, n0: float, n2: float, er
     init = np.ones(shape=xAb.shape, like=xAb)
     np.savetxt(out + Constants.Files.COEF, np.column_stack((xAb, init)))
 
-    number_of_iterations = 0
+    number_of_iterations = 0 #count to avoid runtime error (condition not fulfilled)
     result = 1.0
     doubl = False # to check that right ice layer thickness is used (relevant for composite ices)
+
     while result > error:
+        if number_of_iterations == 100:
+            print('!!!Approximation routine aborted because too many iterations to understate the given error.')
+            break
         # convert Coef.dat to vector
         xC, yt01 = np.loadtxt(
             out + Constants.Files.COEF,
