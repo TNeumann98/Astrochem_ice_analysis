@@ -17,6 +17,7 @@ and calculates the following:
 
 print(
     """
+    Based on
      *--------------------------------------------------------------*
      |           NKABS - N and K from Absorbance Spectrum           |
      |                   Version: January, 2019                     |
@@ -28,7 +29,8 @@ print(
      |  Authors: Dr. Will Robson and Dr. Sergio Pilling             |
      |                                                              |
      *--------------------------------------------------------------*
-
+     
+     *configurated and runtime optimized by T.Neumann*
 """
 )
 
@@ -250,9 +252,13 @@ def input_data(inp_file):
            n0 = 1.22
         elif 'H2O' in inp_file:
                d = 0.5 * 1e-4 #0.3 * 1e-4
-    print('For the output file the ice density (default: 0.47 um) and the length of the wave number range in 1/cm (default: 1, 30) is required.')
-    dens = 0.47
-    leng = [1.,30.]
+    print('For the output file the ice density and the length of the wave number range in 1/cm is required:\nPlease insert your:')
+    try:
+        d = float(input("\n Ice density (default: 0.47 um):"))
+        n0 = float(input("\n Wave number range in 1/cm (default: 1, 30):"))
+    except ValueError:
+        dens = 0.47
+        leng = [1.,30.]
     print(
 	f"""
 got error: ValueError
@@ -261,9 +267,11 @@ the following default values will be used:
      {n0=}
      {n2=}
      MAPE {error=}
+     {dens=}
+     {leng=}
 """
     )
-    return d,n0,n2,error,dens, leng
+    return d,n0,n2,error,dens,leng
     
     
 # Define own input file in .txt-format (wave number, absorbance)
