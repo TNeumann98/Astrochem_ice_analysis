@@ -12,7 +12,7 @@ fi
 
 #check on availabe data and do calculation for all of them
 echo "Iterate through all available files in ../lab_data"
-echo "With optical_const_calc_quick.py calculate the optical constantas (n/ k)"
+echo "With optical_const_calc_quick.py calculate the optical constants (n/ k)"
 
 echo "Run the script ..."
 # run within the python environment
